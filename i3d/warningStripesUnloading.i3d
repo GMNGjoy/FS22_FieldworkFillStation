@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="warningStripesUnloading.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="9.0.4"/>
+  </Asset>
+
+  <Files>
+    <File fileId="1" filename="../textures/warningStripes_grey_diffuse.png"/>
+    <File fileId="2" filename="$data/maps/textures/shared/warningStripes_normal.png"/>
+    <File fileId="3" filename="$data/maps/textures/shared/warningStripes_specular.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="warningStripes_mat" materialId="5">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="warningStripesUnloading.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+      <TransformGroup name="warningStripesSell" nodeId="8">
+        <Shape shapeId="1" name="warningStripeCornerGMNG" translation="-1.1 0 1.1" rotation="90 -0 3.47553e-05" scale="0.01 0.01 0.01" nodeId="10" materialIds="5"/>
+        <Shape shapeId="1" name="warningStripeCornerGMNG" translation="1.1 0 1.1" rotation="90 90 0" scale="0.01 0.01 0.01" nodeId="11" materialIds="5"/>
+        <Shape shapeId="1" name="warningStripeCornerGMNG" translation="-1.1 0 -1.1" rotation="90 -90 0" scale="0.01 0.01 0.01" nodeId="12" materialIds="5"/>
+        <Shape shapeId="1" name="warningStripeCornerGMNG" translation="1.1 0 -1.1" rotation="-90 -3.87052e-05 180" scale="0.01 0.01 0.01" nodeId="13" materialIds="5"/>
+      </TransformGroup>
+  </Scene>
+
+</i3D>

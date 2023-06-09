@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="fillStation.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="9.0.4"/>
+  </Asset>
+
+  <Files>
+    <File fileId="3" filename="../textures/fillStation_diffuse_black.png"/>
+    <File fileId="7" filename="$data/placeables/lizard/limeStation/limeStation_mask.png"/>
+    <File fileId="4" filename="$data/placeables/lizard/limeStation/limeStation_normal.png"/>
+    <File fileId="5" filename="$data/placeables/lizard/limeStation/limeStation_specular.png"/>
+    <File fileId="6" filename="$data/shaders/buildingShader.xml"/>
+    <File fileId="2" filename="$data/shared/default_normal.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="dischargeEffect:default_mat" materialId="5" diffuseColor="0.494118 0.494118 0.494118 1">
+      <Normalmap fileId="2"/>
+    </Material>
+    <Material name="fillStation_mat" materialId="6" customShaderId="6">
+      <Texture fileId="3"/>
+      <Normalmap fileId="4"/>
+      <Glossmap fileId="5"/>
+      <Custommap name="mMaskMap" fileId="7"/>
+    </Material>
+    <Material name="lambert1" materialId="7" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="fillStation.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+      <TransformGroup name="fillStation" nodeId="19">
+        <TransformGroup name="buyingStation" nodeId="20">
+          <TransformGroup name="mapPosition" translation="0 0 3.5" nodeId="21"/>
+          <TransformGroup name="loadingStation" nodeId="22">
+            <Shape shapeId="1" name="loadingTrigger" translation="0 2.06123 3.5" static="true" trigger="true" collisionMask="1073741824" nodeId="23" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+            <TransformGroup name="dischargeNode" translation="0 3.4728 3.5712" nodeId="24"/>
+            <TransformGroup name="aiNodeLoading" translation="5.47063e-17 0 3.75054" rotation="0 -90 0" nodeId="25"/>
+            <TransformGroup name="dischargeEffect1" translation="-0.0118704 3.46474 3.56998" nodeId="26">
+              <Shape shapeId="2" name="pipeEffect" translation="6.66134e-18 5.68434e-16 -1.08002e-14" rotation="90 0 0" clipDistance="300" nodeId="27" materialIds="5" castsShadows="true" receiveShadows="true"/>
+              <Shape shapeId="3" name="pipeEffectSmoke" translation="-9.04166e-15 -2.56733 -3.46745e-14" clipDistance="100" nodeId="28" materialIds="5" castsShadows="true" receiveShadows="true"/>
+            </TransformGroup>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="clearAreas" nodeId="29">
+          <TransformGroup name="clearArea1Start" translation="-2 0 -1.5919" nodeId="30">
+            <TransformGroup name="clearArea1Width" translation="0 0 6.5919" nodeId="31"/>
+            <TransformGroup name="clearArea1Height" translation="4 0 -1.7053e-15" nodeId="32"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="levelAreas" nodeId="33">
+          <TransformGroup name="levelArea1Start" translation="-2 0 -1.5919" nodeId="34">
+            <TransformGroup name="levelArea1Width" translation="0 0 6.5919" nodeId="35"/>
+            <TransformGroup name="levelArea1Height" translation="4 0 -1.7053e-15" nodeId="36"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="testAreas" nodeId="37">
+          <TransformGroup name="testArea1Start" translation="-2 0 -1.55437" nodeId="38">
+            <TransformGroup name="testArea1End" translation="4 8.24985 6.55437" nodeId="39"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="tipOcclusionUpdateAreas" nodeId="40">
+          <TransformGroup name="tipOcclusionUpdateArea1Start" translation="-2.18243 0 -2.0616" nodeId="41">
+            <TransformGroup name="tipOcclusionUpdateArea1End" translation="4.31072 0 7.22553" nodeId="42"/>
+          </TransformGroup>
+        </TransformGroup>
+        <TransformGroup name="markerLoading" translation="0 0 3.60886" nodeId="43"/>
+        <TransformGroup name="tipCollision" nodeId="44">
+          <Shape shapeId="4" name="tipCollision" translation="0 0.5 0" visibility="false" static="true" collisionMask="524288" nodeId="45" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        </TransformGroup>
+        <TransformGroup name="visuals" nodeId="46">
+          <TransformGroup name="winter" nodeId="47"/>
+          <Shape shapeId="5" name="foodSilo01_small" clipDistance="300" nodeId="48" materialIds="6" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+        <TransformGroup name="collisions" nodeId="49">
+          <Shape shapeId="6" name="collision" translation="0 0.5 0" visibility="false" static="true" nodeId="50" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        </TransformGroup>
+        <Shape shapeId="7" name="playerTrigger" translation="1.60099 2.27374e-15 -0.00139261" static="true" trigger="true" collisionMask="3145728" clipDistance="600" nodeId="51" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true">
+          <TransformGroup name="playerTriggerMarker" translation="-6.10352e-07 0 -3.05176e-07" nodeId="52"/>
+        </Shape>
+        <TransformGroup name="unloadingStation" translation="0 -0.0248869 3.469" nodeId="53">
+          <Shape shapeId="8" name="exactFillRootNode" translation="0 0 0.461" scale="0.5 1 1" visibility="false" static="true" trigger="true" collisionMask="1073741824" density="0.0001" nodeId="54" materialIds="7" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+          <TransformGroup name="aiUnloadingNode" translation="-0.0118704 0.2 0.535202" rotation="0 -90 0" nodeId="55"/>
+          <TransformGroup name="markerUnloading" translation="0 0 1" nodeId="56"/>
+          <TransformGroup name="warningStripeLinkNode" translation="0 0.03 1" nodeId="57"/>
+        </TransformGroup>
+        <TransformGroup name="storage" nodeId="63"/>
+      </TransformGroup>
+  </Scene>
+
+</i3D>
